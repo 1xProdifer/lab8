@@ -1,0 +1,253 @@
+/* Adhyan Chandhoke 2024 */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "nav main"
+        "footer footer";
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 0.5fr 3fr;
+    max-height: 100vh;
+}
+
+.heading {
+    grid-area: header;
+    background-color: #528AAE;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    opacity: 0.9;
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+}
+
+.heading h1 {
+    font-size: 5.2rem;
+    color: rgb(33, 31, 31);
+    font-family: "Papyrus", "Brush Script MT", cursive;
+    text-shadow: 2px 2px 5px grey;
+    padding: 10px;
+}
+
+#image1 img {
+    max-width: 100%;
+    object-fit: cover;
+    padding: 0;
+}
+
+.nav {
+    grid-area: nav;
+    background-color: #528AAE;
+    display: grid;
+    grid-template-rows: repeat(4, 50px); 
+}
+
+.nav a {
+    text-align: center;
+    text-decoration: none;
+    padding: 15px;
+    color: white;
+    background-color: rgb(239, 176, 197);
+    border-bottom:  1px solid white;
+}
+
+
+.grid-layout {
+    grid-area: main;
+    display: grid;
+    grid-template-areas: 
+        "text-content image-content";
+    grid-template-columns: 3fr 1fr;
+    gap: 25px;
+    padding: 10px;
+}
+
+.main-content {
+    grid-area: text-content;
+    padding: 10px;
+    
+}
+
+.main-content h2{
+    padding: 20px 3px;
+    color: #528AAE;
+    font-size: 1.5em;
+}
+
+#specialtext{
+    padding-bottom: 20px;
+
+}
+.image-content {
+    grid-area: image-content;
+    padding: 10px;
+}
+
+.image-content img {
+    min-width:100%;
+    height: 400px;
+}
+
+
+.footer {
+    grid-area: footer;
+    text-align: center;
+    padding: 10px;
+    background-color: #528AAE;
+    font-size: 0.9rem;
+}
+
+@media (min-width: 600px) and (max-width: 1000px) {
+    body {
+        grid-template-areas:
+            "header"
+            "nav"
+            "main"
+            "footer";
+        grid-template-columns: 1fr; 
+    }
+
+    .nav{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        align-items: center;
+        background-color: #afc1e0;
+        height: 80px;
+        padding: 15px 25px;
+    }
+
+    .nav a{
+        background-color:  rgb(239, 176, 197);
+        display: block;
+        padding: 18px;
+        margin: 0 18px;
+        
+    }
+
+    .heading{
+        display: grid;
+        gap: 10px;
+        max-height:85px;
+        overflow: hidden;
+        grid-template-columns:auto 1fr;
+    }
+
+    #image1 img{
+        width: auto;
+        height: auto;
+        object-fit: cover;
+
+    }
+
+    .grid-layout {
+        grid-template-areas:
+            "text-content image-content"
+            "image-content";
+        grid-template-columns: 1fr;
+    }
+    
+    .main-content {
+        grid-area: text-content;
+        
+    }
+    
+    .main-content h2{
+        padding: 20px 3px;
+        color: #85a1d2;
+        font-size: 1.5em;
+    }
+    
+    #specialtext{
+        padding-bottom: 20px;
+    
+    }
+
+}
+
+@media (max-width: 600px) {
+    body {
+        grid-template-areas:
+            "header"
+            "nav"
+            "main"
+            "footer";
+        grid-template-columns: 1fr;
+    }
+
+    .grid-layout {
+        grid-template-areas: "text-content";
+        grid-template-columns: 1fr;
+    }
+
+    .image-content {
+        display: none;
+    }
+
+    .heading{
+            text-align: right;
+            background-color: #8fb1ea;
+            color: navy;
+            display: block;
+            position: relative;
+            max-height: 140px;
+            overflow: hidden;
+            mix-blend-mode: color;
+    }
+
+    .heading h1{
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: rgb(11, 11, 66);
+        background-color: rgba(75, 69, 152, 0.5);
+        padding: 20px;
+        font-size: 2.5em;
+        width: 100%;
+        height: 100%;
+        text-align: left;
+    }
+
+    #image1 img{
+         object-fit: cover;
+        width: 100%;
+        opacity: 0.6;
+        margin-left: 50px;
+        transform: translate(55%, 2%);
+        height: 140px;
+        width: auto;
+        margin: 0 auto;
+    }
+
+    .nav {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .nav a{
+        grid-template-columns: 1fr;
+        padding: 15px;
+        background-color: #85a1d2;
+        text-align: left;
+    }
+    .main-content{
+        max-width: 100%;
+        padding: 1px;
+        margin: 5px
+
+    }
+      
+     .main-content h2{
+        padding: 5px 2px;
+        font-size: 1.7em;
+     }
+}
